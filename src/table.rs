@@ -403,7 +403,7 @@ fn sais<T>(
         }
     }
 
-    // Find and move all wstrings to the beinning of `sa`.
+    // Find and move all wstrings to the beginning of `sa`.
     let mut num_wstrs = 0u32;
     for i in 0..sa.len() {
         let sufi = sa[i];
@@ -550,7 +550,7 @@ impl SuffixTypes {
             None => return,
             Some(t) => t,
         };
-        self.types[lasti] = Descending;
+        self.types[lasti] = Descending; // descend towards an imaginary sentinel
         for (i, c) in chars {
             if c < lastc {
                 self.types[i] = Ascending;
